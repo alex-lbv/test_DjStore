@@ -1,0 +1,152 @@
+.popup {
+  pointer-events: none;
+  opacity: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  z-index: 100;
+  transition: opacity .3s ease-in;
+
+  &.opened {
+    pointer-events: inherit;
+    opacity: 1;
+  }
+
+  form {
+    position: fixed;
+    top: 30%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: max-content;
+    padding: 30px 42px 48px;
+    max-width: 538px;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    z-index: 100;
+
+    @media screen and (max-width: 767px) {
+      top:20%;
+      max-width: none;
+      min-height: 362px;
+      padding: 32px 16px 24px;
+    }
+  }
+
+
+  &__title {
+    display: block;
+    margin-bottom: 12px;
+    font: 600 24px/31.68px Montserrat;
+
+    @media screen and (max-width: 767px) {
+      font: 600 24px/29.26px Montserrat;
+    }
+  }
+
+  &__description {
+    margin-bottom: 28px;
+    font: 400 16px/25.6px Montserrat;
+
+    @media screen and (max-width: 767px) {
+      margin-bottom: 7px;
+      font: 400 12px/19.2px Montserrat;
+    }
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+
+    @media screen and (max-width: 767px) {
+      margin-bottom: 16px;
+    }
+
+    label {
+      &:not(:last-of-type) {
+        margin-bottom: 24px;
+
+        @media screen and (max-width: 767px) {
+          margin-bottom: 16px;
+        }
+      }
+    }
+
+    input {
+      padding: 15px;
+      width: 100%;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 9px;
+      font: 400 16px/18.24px Montserrat;
+
+      @media screen and (max-width: 767px) {
+        padding: 12px;
+        margin-bottom: 16px;
+        font: 400 14px/15.96px Montserrat;
+      }
+    }
+  }
+
+  &__privacy-policy {
+    margin-bottom: 16px;
+
+    label {
+      cursor: pointer;
+      position: relative;
+      padding-left: 25px;
+      font: 400 14px/17.07px Montserrat;
+
+      @media screen and (max-width: 767px) {
+        padding-left: 25px;
+        font: 400 8px/9.75px Montserrat;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 16px;
+        height: 16px;
+        border: 1px solid #397DFF;
+      }
+    }
+
+    & input:checked + label::after {
+      content: '';
+      position: absolute;
+      left: 2px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: 12px;
+      height: 12px;
+      background-image: url("../img/check.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+  }
+
+  &__bg {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    background: rgba(0, 0, 0, .5);
+  }
+}

@@ -1,0 +1,24 @@
+.btn {
+  padding: 14px 0;
+  width: 100%;
+  text-align: center;
+  background-color: #397DFF;
+  box-shadow: 0 6px 24px rgba(85, 104, 255, 0.12);
+  border-radius: 8px;
+  font: 500 16px/19.5px Montserrat;
+  color: #FFFFFF;
+
+  @media screen and (max-width: 1199px) {
+    padding: 10px 0;
+  }
+
+  &--transparent {
+    border: 1px solid #FFFFFF;
+    background-color: transparent;
+
+    @media screen and (max-width: 1199px) {
+      padding: 8px 0;
+      font: 500 14px/19.5px Montserrat;
+    }
+  }
+}

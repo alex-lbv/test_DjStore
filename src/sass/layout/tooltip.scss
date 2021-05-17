@@ -1,0 +1,167 @@
+.tooltip {
+  position: absolute;
+  top: 10%;
+  left: 19%;
+
+  @media screen and (max-width: 405px) {
+    top: 2%;
+    left: 2%;
+  }
+
+  @media screen and (max-width: 560px) {
+    top: 5%;
+    left: 5%;
+  }
+
+  @media screen and (max-width: 767px) {
+    top: 7%;
+    left: 7%;
+  }
+
+  @media screen and (max-width: 999px) {
+    top: 8%;
+    left: 8%;
+  }
+
+  @media screen and (max-width: 1199px) {
+    top: 10%;
+    left: 10%;
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 60px;
+    height: 60px;
+
+    @media screen and (max-width: 767px) {
+      width: 40px;
+      height: 40px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: -185px;
+    left: -146px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 44px 16px 24px;
+    min-width: 352px;
+    width: max-content;
+    background-color: #ffffff;
+    border-radius: 10px;
+    transition: opacity .3s ease-in;
+    z-index: 51;
+
+    @media screen and (max-width: 767px) {
+      top: -185px;
+      left: -128px;
+      padding: 16px;
+      min-width: inherit;
+    }
+
+    &.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -35px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 28px;
+      height: 20px;
+      border: 20px solid transparent; border-top: 20px solid #ffffff;
+      pointer-events: none;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    display: block;
+    font: 500 18px/23.76px Montserrat;
+    color: rgba(43, 45, 58, 1);
+
+    @media screen and (max-width: 767px) {
+      font: 500 16px/21.12px Montserrat;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    right: 44px;
+    top: 10px;
+    width: 70px;
+    height: 70px;
+
+    @media screen and (max-width: 767px) {
+      width: 38px;
+      height: 38px;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+  }
+
+  &__list {
+    li {
+      position: relative;
+      padding-left: 24px;
+
+      &:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 16px;
+        height: 16px;
+        background-color: #397DFF;
+        opacity: .15;
+        border-radius: 50%;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 5px;
+        margin: auto;
+        width: 6px;
+        height: 6px;
+        background-color: #397DFF;
+        border-radius: 50%;
+      }
+
+      p {
+        font: 400 12px/17.04px Montserrat;
+      }
+    }
+  }
+}
